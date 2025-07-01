@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
             margin: 0 auto;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
@@ -37,7 +38,7 @@
         .header h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .header p {
@@ -101,14 +102,14 @@
             background: #f8f9fa;
             border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
 
         .food-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
 
         .food-card.want-to-try {
@@ -121,19 +122,33 @@
             background: #e8f5e8;
         }
 
+        .food-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .food-image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 3rem;
+        }
+
         .food-name {
             font-size: 1.3rem;
             font-weight: 700;
             color: #333;
             margin-bottom: 8px;
             line-height: 1.3;
-        }
-
-        .food-vendor {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
         }
 
         .food-description {
@@ -298,11 +313,11 @@
             .tabs {
                 flex-direction: column;
             }
-            
+
             .food-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .header h1 {
                 font-size: 2rem;
             }
@@ -314,6 +329,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -329,7 +345,7 @@
 
         <div id="browse" class="tab-content active">
             <input type="text" class="search-box" placeholder="Search foods by name or vendor..." id="searchBox">
-            
+
             <div class="food-grid" id="allFoodsGrid">
                 <!-- Food items will be populated here -->
             </div>
@@ -346,7 +362,7 @@
                     <div class="stat-label">Est. Budget ($8 avg)</div>
                 </div>
             </div>
-            
+
             <div class="food-grid" id="wantToTryGrid">
                 <div class="empty-state">
                     No foods in your "want to try" list yet!<br>
@@ -370,7 +386,7 @@
                     <div class="stat-label">Top Rated</div>
                 </div>
             </div>
-            
+
             <div class="food-grid" id="triedGrid">
                 <div class="empty-state">
                     No foods rated yet!<br>
@@ -386,241 +402,281 @@
                 id: 1,
                 name: "All Vegan Indianapolis Philly",
                 vendor: "Black Leaf Vegan Food Truck",
-                description: "Hoosier flavor, Philly soul, plant-based power! Introducing the All-Vegan Indianapolis Philly - stacked with grilled delicious plant-based meat, sautéed peppers & onions, and smothered in our creamy \"cheez\" sauce, all on a toasted hoagie. It's bold. It's hearty. It's 100% vegan."
+                description: "Hoosier flavor, Philly soul, plant-based power! Introducing the All-Vegan Indianapolis Philly - stacked with grilled delicious plant-based meat, sautéed peppers & onions, and smothered in our creamy \"cheez\" sauce, all on a toasted hoagie. It's bold. It's hearty. It's 100% vegan.",
+                image: null
             },
             {
                 id: 2,
                 name: "Bacon Honeybun Burger",
                 vendor: "McWaters Concessions",
-                description: "Fresh Angus Burger resting between Grilled Honeybuns, topped with Bacon, Cheese & your choice of garden toppings"
+                description: "Fresh Angus Burger resting between Grilled Honeybuns, topped with Bacon, Cheese & your choice of garden toppings",
+                image: "https://media.tegna-media.com/assets/WTHR/images/f48f8fde-81a8-419c-8a28-7b2a0e346437/20250701T095726/f48f8fde-81a8-419c-8a28-7b2a0e346437_1140x641.jpg"
             },
             {
                 id: 3,
                 name: "Bacon Wrapped BBQ Chicken on a Stick",
                 vendor: "R.E. Smith Food and Drink Fresh",
-                description: "Chicken Tender, hand dipped in batter. Wrapped with delicious bacon and brush with Sweet Baby Ray's barbecue sauce topped with a cherry tomato. Served on a stick. Choice of Sweet Baby Barbecue Sauce or Hidden Valley Ranch dipping sauce"
+                description: "Chicken Tender, hand dipped in batter. Wrapped with delicious bacon and brush with Sweet Baby Ray's barbecue sauce topped with a cherry tomato. Served on a stick. Choice of Sweet Baby Barbecue Sauce or Hidden Valley Ranch dipping sauce",
+                image: null
             },
             {
                 id: 4,
                 name: "BBQ Machos",
                 vendor: "Nitro Hog",
-                description: "BBQ BBQ MACHOS are here- tortilla chips topped with creamy Mac & Cheese, smoky pulled pork, and cheese sauce. Swing by Nitro Hog BBQ at Lot 421 in front of the Coliseum-BBQ sauce is available if you want to sauce it up!"
+                description: "BBQ BBQ MACHOS are here- tortilla chips topped with creamy Mac & Cheese, smoky pulled pork, and cheese sauce. Swing by Nitro Hog BBQ at Lot 421 in front of the Coliseum-BBQ sauce is available if you want to sauce it up!",
+                image: null
             },
             {
                 id: 5,
                 name: "Blue Cotton Candy Margarita",
                 vendor: "Urick Concessions",
-                description: "A fun, vibrant cocktail that combines the tangy flavor of a classic margarita with the sweet, whimsical taste of cotton candy. Made with tequila, blue curaçao, lime juice, and a touch of real cotton candy for garnish of sweetness."
+                description: "A fun, vibrant cocktail that combines the tangy flavor of a classic margarita with the sweet, whimsical taste of cotton candy. Made with tequila, blue curaçao, lime juice, and a touch of real cotton candy for garnish of sweetness.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/a8db318f-cc6c-444e-8796-82028d7127ee/20250701T095918/a8db318f-cc6c-444e-8796-82028d7127ee_1140x641.jpg"
             },
             {
                 id: 6,
                 name: "Blueberry Breakfast Sausage Flapjack",
                 vendor: "Smokehouse Saloon (Red Frazier)",
-                description: "House made Blueberry Breakfast Sausage wrapped in a flapjack. Served with fresh fruit, powdered sugar and syrup."
+                description: "House made Blueberry Breakfast Sausage wrapped in a flapjack. Served with fresh fruit, powdered sugar and syrup.",
+                image: null
             },
             {
                 id: 7,
                 name: "Brunch Mary",
                 vendor: "Urick Concessions",
-                description: "The Brunch Mary is a meal in a glass—garnished with skewers stacked high with a mini sausage breakfast sandwich, fresh fruit kebab, crispy bacon, fluffy donut holes, and a golden waffle stick."
+                description: "The Brunch Mary is a meal in a glass—garnished with skewers stacked high with a mini sausage breakfast sandwich, fresh fruit kebab, crispy bacon, fluffy donut holes, and a golden waffle stick.",
+                image: null
             },
             {
                 id: 8,
                 name: "Brunch Mimosa",
                 vendor: "Urick Concessions",
-                description: "This isn't your average mimosa—served with skewers of a mini sausage breakfast sandwich, fruit kebab, crispy bacon, donut holes, and a waffle stick, it's brunch in a glass with a bubbly twist."
+                description: "This isn't your average mimosa—served with skewers of a mini sausage breakfast sandwich, fruit kebab, crispy bacon, donut holes, and a waffle stick, it's brunch in a glass with a bubbly twist.",
+                image: null
             },
             {
                 id: 9,
                 name: "Butterfinger Funnel Cake",
                 vendor: "North American Midway Entertainment",
-                description: "Treat yourself to a Butterfinger Funnel Cake! Crispy, golden funnel cake topped with smooth vanilla cream and crunchy Butterfinger pieces. A perfect mix of sweet, creamy, and crunchy in every bite!"
+                description: "Treat yourself to a Butterfinger Funnel Cake! Crispy, golden funnel cake topped with smooth vanilla cream and crunchy Butterfinger pieces. A perfect mix of sweet, creamy, and crunchy in every bite!",
+                image: "https://media.tegna-media.com/assets/WTHR/images/d295bc95-ab5e-47bb-9ac0-671502b9efc4/20250701T095044/d295bc95-ab5e-47bb-9ac0-671502b9efc4_1140x641.jpg"
             },
             {
                 id: 10,
                 name: "Cheesy Hot Honey Chicken Fries",
                 vendor: "Urick Concessions",
-                description: "Crispy chicken bites over golden fries, smothered in creamy hatch queso, topped with smoky bacon, fresh parsley, and finished with a drizzle of Mike's Hot Honey."
+                description: "Crispy chicken bites over golden fries, smothered in creamy hatch queso, topped with smoky bacon, fresh parsley, and finished with a drizzle of Mike's Hot Honey.",
+                image: null
             },
             {
                 id: 11,
                 name: "Cinnamon Toast Cookie Butter Pretzel Bites",
                 vendor: "Wilson Concessions",
-                description: "Pretzel bites covered in cinnamon and sugar then smothered with cookie butter, cream cheese icing and topped off with Cinnamon Toast Crunch cereal."
+                description: "Pretzel bites covered in cinnamon and sugar then smothered with cookie butter, cream cheese icing and topped off with Cinnamon Toast Crunch cereal.",
+                image: null
             },
             {
                 id: 12,
                 name: "Cookie Butter Cold Brew Float",
                 vendor: "Hooks Drugstore Museum",
-                description: "It's a vanilla cold brew with vanilla ice cream. Topped with whipped cream, cookie butter drizzle, cookie crumbles, and a cherry."
+                description: "It's a vanilla cold brew with vanilla ice cream. Topped with whipped cream, cookie butter drizzle, cookie crumbles, and a cherry.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/afcffff6-6784-4078-9962-0d554ca89678/20250701T094936/afcffff6-6784-4078-9962-0d554ca89678_1140x641.jpg"
             },
             {
                 id: 13,
                 name: "Cotton Candy Lemon Shake Up",
                 vendor: "Urick Concessions",
-                description: "A classic lemonade shake-up with a sweet twist—spun with a fluffy wad of cotton candy inside and topped with a cloud of cotton candy on the straw. Tart, sweet, and totally fun!"
+                description: "A classic lemonade shake-up with a sweet twist—spun with a fluffy wad of cotton candy inside and topped with a cloud of cotton candy on the straw. Tart, sweet, and totally fun!",
+                image: null
             },
             {
                 id: 14,
                 name: "Deep Fried Pork Chop Sandwich",
                 vendor: "Twisted Drinks and Food",
-                description: "Deep fried BBQ pork chop sandwich is as exactly as it sounds. We season our boneless pork chops with a dry BBQ rub, then deep fry them and serve them on a fresh bakery bun and top it with our yummy BBQ sauce."
+                description: "Deep fried BBQ pork chop sandwich is as exactly as it sounds. We season our boneless pork chops with a dry BBQ rub, then deep fry them and serve them on a fresh bakery bun and top it with our yummy BBQ sauce.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/f0ddf833-9cff-413a-b8d4-0c064181beea/20250701T094803/f0ddf833-9cff-413a-b8d4-0c064181beea_1140x641.jpg"
             },
             {
                 id: 15,
                 name: "Dirty Dancing Egg Rolls",
                 vendor: "Taste of Home Catering & Food Truck",
-                description: "(2) 4\" chicken Philly egg rolls dipped in our homemade hot honey lemon pepper buffalo sauce drizzled with ranch dressing."
+                description: "(2) 4\" chicken Philly egg rolls dipped in our homemade hot honey lemon pepper buffalo sauce drizzled with ranch dressing.",
+                image: null
             },
             {
                 id: 16,
                 name: "Hot Honey Beignets",
                 vendor: "The Bakerman",
-                description: "Our famous New Orleans Style Beignets that have been a State Fair Favorite for decades now has a new sweet and spicy kick!"
+                description: "Our famous New Orleans Style Beignets that have been a State Fair Favorite for decades now has a new sweet and spicy kick!",
+                image: null
             },
             {
                 id: 17,
                 name: "Jalapeño Popper Pizza",
                 vendor: "DG Concessions / Ginocchios Pizza",
-                description: "We start with a garlic butter and light marinara base. Topped with a mozzarella cheese blend, pepperoni, jalapeno poppers, bacon, and finished with a drizzle of ranch dressing."
+                description: "We start with a garlic butter and light marinara base. Topped with a mozzarella cheese blend, pepperoni, jalapeno poppers, bacon, and finished with a drizzle of ranch dressing.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/a50fc466-69b1-4464-807e-fab913814d1c/20250701T094646/a50fc466-69b1-4464-807e-fab913814d1c_1140x641.jpg"
             },
             {
                 id: 18,
                 name: "Jerk Cheesy Fries",
                 vendor: "Jamaican Breeze",
-                description: "Our Jerk Cheesy Fries are crispy, cheesy, and drizzled in your choice of mild or spicy jerk sauce — flavor that hits every time."
+                description: "Our Jerk Cheesy Fries are crispy, cheesy, and drizzled in your choice of mild or spicy jerk sauce — flavor that hits every time.",
+                image: null
             },
             {
                 id: 19,
                 name: "Jessops' Butterscotch Apple Crunch",
                 vendor: "Jessop Candy Products",
-                description: "Gourmet sliced apples with warm caramel sauce and crushed Butterscotch Corn for topping. Nuts optional. In a parfait cup."
+                description: "Gourmet sliced apples with warm caramel sauce and crushed Butterscotch Corn for topping. Nuts optional. In a parfait cup.",
+                image: null
             },
             {
                 id: 20,
                 name: "Key Lime Pie Milkshake",
                 vendor: "American Dairy Association Indiana Inc",
-                description: "Our Key Lime Pie Milkshake blends tangy citrus with creamy sweetness for a refreshing treat to cool you down on a hot Indiana summer day! It's sweet, smooth, and made for fair memories."
+                description: "Our Key Lime Pie Milkshake blends tangy citrus with creamy sweetness for a refreshing treat to cool you down on a hot Indiana summer day! It's sweet, smooth, and made for fair memories.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/c50d3848-a56e-4743-ac94-cafd6afc45fd/20250701T094312/c50d3848-a56e-4743-ac94-cafd6afc45fd_1140x641.jpg"
             },
             {
                 id: 21,
                 name: "Lobster Mac & Cheese",
                 vendor: "Freund Family Foods",
-                description: "A luxurious twist on a comfort classic! Chunks of lobster meat tossed in garlic butter and folded into our velvety homemade cheese sauce."
+                description: "A luxurious twist on a comfort classic! Chunks of lobster meat tossed in garlic butter and folded into our velvety homemade cheese sauce.",
+                image: null
             },
             {
                 id: 22,
                 name: "Passion Fruit Boba Lemonade Shakeup",
                 vendor: "Indiana Ribeye",
-                description: "A refreshing sip of summer at Indiana Ribeye's Old Fashioned Lemonade Stand! Shakeup your lemonade with your favorite tastes of Boba!"
+                description: "A refreshing sip of summer at Indiana Ribeye's Old Fashioned Lemonade Stand! Shakeup your lemonade with your favorite tastes of Boba!",
+                image: null
             },
             {
                 id: 23,
                 name: "Peach Tea",
                 vendor: "Twisted Drinks and Food",
-                description: "Fresh brewed Lipton iced tea that we flavor peach then add peach flavored boba balls."
+                description: "Fresh brewed Lipton iced tea that we flavor peach then add peach flavored boba balls.",
+                image: null
             },
             {
                 id: 24,
                 name: "Pickle Bacon Ranch Pizza",
                 vendor: "Swains Concessions",
-                description: "We start off with our homemade pizza dough stretched to perfection and cover it with our award-winning pickle ranch sauce and mozzarella cheese. Topping it off with pickles and bacon and adding a touch of pickle ranch to finish it off."
+                description: "We start off with our homemade pizza dough stretched to perfection and cover it with our award-winning pickle ranch sauce and mozzarella cheese. Topping it off with pickles and bacon and adding a touch of pickle ranch to finish it off.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/a4c0f93b-8e42-422e-9e3e-9a438fe1817e/20250701T093924/a4c0f93b-8e42-422e-9e3e-9a438fe1817e_1140x641.jpg"
             },
             {
                 id: 25,
                 name: "Pickle Fried Oreos",
                 vendor: "Pickle Barrel",
-                description: "Nothing says fair like fried pickles! Try our twist on this fair favorite! A golden Oreo with a pickle slice placed on top dipped in our original, made from scratch batter topped with dill pickle seasoning and a side of ranch to dip in!"
+                description: "Nothing says fair like fried pickles! Try our twist on this fair favorite! A golden Oreo with a pickle slice placed on top dipped in our original, made from scratch batter topped with dill pickle seasoning and a side of ranch to dip in!",
+                image: "https://media.tegna-media.com/assets/WTHR/images/f5865192-04dd-41fd-9c8c-e531c7c5f59a/20250701T093811/f5865192-04dd-41fd-9c8c-e531c7c5f59a_1140x641.jpg"
             },
             {
                 id: 26,
                 name: "Piggy Funnel",
                 vendor: "R&W Concessions",
-                description: "Fluffy funnel cake drizzled with brown sugar, maple syrup, topped with bacon pieces."
+                description: "Fluffy funnel cake drizzled with brown sugar, maple syrup, topped with bacon pieces.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/a55356d3-2ffb-4771-8359-2d35995f3239/20250701T093716/a55356d3-2ffb-4771-8359-2d35995f3239_1140x641.jpg"
             },
             {
                 id: 27,
                 name: "Piggyback Stack",
                 vendor: "Urick Concessions",
-                description: "A hearty, flavor-packed sandwich featuring a pork burger stacked with a classic beef patty, melted American cheese, lettuce, tomato, crispy onions, and our signature sauce."
+                description: "A hearty, flavor-packed sandwich featuring a pork burger stacked with a classic beef patty, melted American cheese, lettuce, tomato, crispy onions, and our signature sauce.",
+                image: null
             },
             {
                 id: 28,
                 name: "Pineapple Lemonade Shake-up",
                 vendor: "McWaters Concessions",
-                description: "Indiana State Fair Staple, Fresh made Lemonade shake up with a twist of Hawaiian Fresh Pineapple infused."
+                description: "Indiana State Fair Staple, Fresh made Lemonade shake up with a twist of Hawaiian Fresh Pineapple infused.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/d28e0c5d-24cf-491c-b63c-2b9153bfedc1/20250701T093542/d28e0c5d-24cf-491c-b63c-2b9153bfedc1_1140x641.jpg"
             },
             {
                 id: 29,
                 name: "Pineapple Whip Shake Up",
                 vendor: "Hi & Mighty",
-                description: "A tart, smooth and refreshing canned cocktail handmade at the Indiana State Fairgrounds with real pineapple and premium liquor. Perfect to cheers at the midway!"
+                description: "A tart, smooth and refreshing canned cocktail handmade at the Indiana State Fairgrounds with real pineapple and premium liquor. Perfect to cheers at the midway!",
+                image: null
             },
             {
                 id: 30,
                 name: "Slime Licker Boba Blast",
                 vendor: "Georgia's Kitchen & Toxic Waste Candy Company",
-                description: "Georgia's Kitchen collaborates with Indiana's own Toxic Waste Candy Company. The drink features lemonade with Slime Licker Sour Popping Boba and Slime Licker sour syrup. Three flavors: Green Apple, Blue Razz & Strawberry Lemonade."
+                description: "Georgia's Kitchen collaborates with Indiana's own Toxic Waste Candy Company. The drink features lemonade with Slime Licker Sour Popping Boba and Slime Licker sour syrup. Three flavors: Green Apple, Blue Razz & Strawberry Lemonade.",
+                image: null
             },
             {
                 id: 31,
                 name: "S'MORES Cookie",
                 vendor: "The Cavity Factory",
-                description: "This cookie is a graham cracker base with milk chocolate and dark chocolate. Topped with a marshmallow that can be torched."
+                description: "This cookie is a graham cracker base with milk chocolate and dark chocolate. Topped with a marshmallow that can be torched.",
+                image: null
             },
             {
                 id: 32,
                 name: "State Fair Cotton Candy",
                 vendor: "Sun King Brewing",
-                description: "Ale with Cotton Candy Flavor 4.0% ABV | 10 IBU State Fair Cotton Candy balances the sweet summer flavors of Blue Cotton Candy with crisp malt character in celebration of the Indiana State Fair."
+                description: "Ale with Cotton Candy Flavor 4.0% ABV | 10 IBU State Fair Cotton Candy balances the sweet summer flavors of Blue Cotton Candy with crisp malt character in celebration of the Indiana State Fair.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/a05db20d-0026-44a5-9375-1573c0752d54/20250701T093430/a05db20d-0026-44a5-9375-1573c0752d54_1140x641.jpg"
             },
             {
                 id: 33,
                 name: "Street Corn Steak Tacos",
                 vendor: "Urick Concessions",
-                description: "Flame-grilled ribeye steak, topped with zesty street corn, diced onions, crumbled cotija cheese, and fresh cilantro for the perfect street-style bite."
+                description: "Flame-grilled ribeye steak, topped with zesty street corn, diced onions, crumbled cotija cheese, and fresh cilantro for the perfect street-style bite.",
+                image: null
             },
             {
                 id: 34,
                 name: "Sweet Heat Sausage Sandwich",
                 vendor: "R&W Concessions",
-                description: "Jalapeño Sausage smothered in sweet BBQ sauce topped with sautéed onions, sweet peppers and cabbage served on a bun."
+                description: "Jalapeño Sausage smothered in sweet BBQ sauce topped with sautéed onions, sweet peppers and cabbage served on a bun.",
+                image: null
             },
             {
                 id: 35,
                 name: "The Hog & Slaw",
                 vendor: "Indiana Pork Producers",
-                description: "Enjoy a classic favorite with a Hoosier twist - The Hog & Slaw! This pulled pork and coleslaw sandwich, presented by Indiana Pork Producers, features delicious pulled pork topped with crisp, creamy coleslaw for the perfect balance of savory and tangy flavors in every bite."
+                description: "Enjoy a classic favorite with a Hoosier twist - The Hog & Slaw! This pulled pork and coleslaw sandwich, presented by Indiana Pork Producers, features delicious pulled pork topped with crisp, creamy coleslaw for the perfect balance of savory and tangy flavors in every bite.",
+                image: null
             },
             {
                 id: 36,
                 name: "The Smoked Gouda'cue",
                 vendor: "American Dairy Association",
-                description: "Get ready to sink your teeth into The Smoked Gouda'cue - a bold, melty masterpiece made for true cheese lovers. Indulge in layers of rich smoked gouda, sharp cheddar, and tangy barbecue sauce between buttery, golden Texas toast. It's smoky, cheesy, saucy, and pure Indiana State Fair comfort food bliss."
+                description: "Get ready to sink your teeth into The Smoked Gouda'cue - a bold, melty masterpiece made for true cheese lovers. Indulge in layers of rich smoked gouda, sharp cheddar, and tangy barbecue sauce between buttery, golden Texas toast. It's smoky, cheesy, saucy, and pure Indiana State Fair comfort food bliss.",
+                image: null
             },
             {
                 id: 37,
                 name: "Trio of Italy",
                 vendor: "Freund Family Foods",
-                description: "A flight of 3 mini-Italian inspired funnel cakes: Tiramisu - Coffee basted funnel cake with mascarpone cheese frosting, and dusted in cocoa powder; Italian Wedding Cake - Cream cheese frosting with chopped pecans and shredded coconut; Cannoli - Cannoli cream frosting with chocolate chips and cannoli shell pieces."
+                description: "A flight of 3 mini-Italian inspired funnel cakes: Tiramisu - Coffee basted funnel cake with mascarpone cheese frosting, and dusted in cocoa powder; Italian Wedding Cake - Cream cheese frosting with chopped pecans and shredded coconut; Cannoli - Cannoli cream frosting with chocolate chips and cannoli shell pieces.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/f36b9713-4886-4acb-a21a-78b2849ced72/20250701T093336/f36b9713-4886-4acb-a21a-78b2849ced72_1140x641.jpg"
             },
             {
                 id: 38,
                 name: "Tropical Thunder",
                 vendor: "R&W Concessions",
-                description: "Mango and strawberry along with lemon all infused into a Tropical Thunder shake-up."
+                description: "Mango and strawberry along with lemon all infused into a Tropical Thunder shake-up.",
+                image: null
             },
             {
                 id: 39,
                 name: "Turkey Sausage Pizza Quesadilla",
                 vendor: "Gobble Gobble Food Truck",
-                description: "Satisfy your fair-time cravings with our Ultimate Cheese & Turkey Sausage Pizza Quesadilla - a golden, crispy tortilla stuffed with seasoned ground turkey sausage, pizza sauce, and melty mozzarella cheese. It's the perfect fusion of comfort food and fair flavor only at GOBBLE GOBBLE!"
+                description: "Satisfy your fair-time cravings with our Ultimate Cheese & Turkey Sausage Pizza Quesadilla - a golden, crispy tortilla stuffed with seasoned ground turkey sausage, pizza sauce, and melty mozzarella cheese. It's the perfect fusion of comfort food and fair flavor only at GOBBLE GOBBLE!",
+                image: null
             },
             {
                 id: 40,
                 name: "Yes Cer's Burger",
                 vendor: "Red Frazier Bison",
-                description: "A twist on the classic burger, this hearty bison burger comes stacked with rich pimento cheese, crunchy potato sticks, and tangy horseradish pickles - all nestled between two thick slices of buttery Texas toast."
+                description: "A twist on the classic burger, this hearty bison burger comes stacked with rich pimento cheese, crunchy potato sticks, and tangy horseradish pickles - all nestled between two thick slices of buttery Texas toast.",
+                image: "https://media.tegna-media.com/assets/WTHR/images/a6818e4a-855a-42a1-8f96-5d5b952949ab/20250701T093130/a6818e4a-855a-42a1-8f96-5d5b952949ab_1140x641.jpg"
             }
         ];
 
@@ -676,7 +732,7 @@
             }
 
             filterFoods(searchTerm) {
-                const filtered = foods2025.filter(food => 
+                const filtered = foods2025.filter(food =>
                     food.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                     food.vendor.toLowerCase().includes(searchTerm.toLowerCase())
                 );
@@ -752,7 +808,7 @@
             renderWantToTry() {
                 const wantToTryFoods = foods2025.filter(food => this.wantToTry.includes(food.id));
                 this.renderFoodGrid('wantToTryGrid', wantToTryFoods, 'wantToTry');
-                
+
                 // Update the empty state if needed
                 const container = document.getElementById('wantToTryGrid');
                 if (wantToTryFoods.length === 0 && this.wantToTry.length === 0) {
@@ -761,7 +817,7 @@
             }
 
             renderTried() {
-                const triedFoods = foods2025.filter(food => 
+                const triedFoods = foods2025.filter(food =>
                     this.tried.some(triedItem => triedItem.id === food.id)
                 );
                 this.renderFoodGrid('triedGrid', triedFoods, 'tried');
@@ -769,10 +825,10 @@
 
             renderFoodGrid(containerId, foods, mode) {
                 const container = document.getElementById(containerId);
-                
+
                 if (foods.length === 0) {
                     let emptyMessage = '';
-                    switch(mode) {
+                    switch (mode) {
                         case 'browse':
                             emptyMessage = 'No foods found matching your search.';
                             break;
@@ -791,7 +847,7 @@
                     const isWantToTry = this.wantToTry.includes(food.id);
                     const triedItem = this.tried.find(item => item.id === food.id);
                     const isTried = !!triedItem;
-                    
+
                     let cardClass = 'food-card';
                     if (isTried) cardClass += ' tried';
                     else if (isWantToTry) cardClass += ' want-to-try';
@@ -804,7 +860,7 @@
                             actionsHtml = `<button class="btn btn-success" disabled>✓ Tried & Rated</button>`;
                             ratingHtml = `
                                 <div class="food-rating-display">
-                                    <span class="rating-stars">${'★'.repeat(triedItem.rating)}${'☆'.repeat(5-triedItem.rating)}</span>
+                                    <span class="rating-stars">${'★'.repeat(triedItem.rating)}${'☆'.repeat(5 - triedItem.rating)}</span>
                                     <span>(${triedItem.rating}/5)</span>
                                 </div>
                             `;
@@ -819,9 +875,9 @@
                             <div class="rating-section">
                                 <strong>Rate this food:</strong>
                                 <div class="rating-input" data-food-id="${food.id}">
-                                    ${[1,2,3,4,5].map(rating => 
-                                        `<span class="star" data-rating="${rating}" onclick="tracker.setRating(${food.id}, ${rating})">★</span>`
-                                    ).join('')}
+                                    ${[1, 2, 3, 4, 5].map(rating =>
+                            `<span class="star" data-rating="${rating}" onclick="tracker.setRating(${food.id}, ${rating})">★</span>`
+                        ).join('')}
                                 </div>
                                 <textarea class="notes-input" placeholder="Your notes..." id="notes-${food.id}"></textarea>
                                 <button class="btn btn-success" onclick="tracker.submitRating(${food.id})" style="margin-top: 10px;">Mark as Tried</button>
@@ -830,7 +886,7 @@
                     } else if (mode === 'tried') {
                         ratingHtml = `
                             <div class="food-rating-display">
-                                <span class="rating-stars">${'★'.repeat(triedItem.rating)}${'☆'.repeat(5-triedItem.rating)}</span>
+                                <span class="rating-stars">${'★'.repeat(triedItem.rating)}${'☆'.repeat(5 - triedItem.rating)}</span>
                                 <span>(${triedItem.rating}/5)</span>
                                 <span style="color: #999; font-size: 0.9rem;">• Tried ${triedItem.dateTried}</span>
                             </div>
@@ -844,8 +900,13 @@
                         `;
                     }
 
+                    const imageHtml = food.image
+                        ? `<img src="${food.image}" alt="${food.name}" class="food-image" loading="lazy">`
+                        : `<div class="food-image-placeholder">🍴</div>`;
+
                     return `
                         <div class="${cardClass}">
+                            ${imageHtml}
                             <div class="food-name">${food.name}</div>
                             <div class="food-vendor">by ${food.vendor}</div>
                             <div class="food-description">${food.description}</div>
@@ -888,12 +949,12 @@
 
                 // Tried stats
                 document.getElementById('triedStatCount').textContent = this.tried.length;
-                
+
                 if (this.tried.length > 0) {
                     const avgRating = this.tried.reduce((sum, item) => sum + item.rating, 0) / this.tried.length;
                     document.getElementById('avgRating').textContent = avgRating.toFixed(1);
-                    
-                    const topRated = this.tried.reduce((best, item) => 
+
+                    const topRated = this.tried.reduce((best, item) =>
                         item.rating > best.rating ? item : best
                     );
                     const topRatedFood = foods2025.find(food => food.id === topRated.id);
@@ -932,4 +993,5 @@
         const tracker = new FairFoodTracker();
     </script>
 </body>
+
 </html>
